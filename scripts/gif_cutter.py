@@ -26,7 +26,7 @@ def convert_gif_to_spritesheet(source_folder, output_folder, columns=4):
                         y = (i // columns) * frame_height
                         spritesheet.paste(frame, (x, y))
 
-                    output_path = os.path.join(output_folder, filename.replace('.gif', '_spritesheet.png'))
+                    output_path = os.path.join(output_folder, filename.replace('.gif', '.png'))
                     spritesheet.save(output_path)
                     print(f"Saved: {output_path}")
 
@@ -34,6 +34,7 @@ def convert_gif_to_spritesheet(source_folder, output_folder, columns=4):
 def main():
     root = tk.Tk()
     root.title("GIF to SpriteSheet Converter")
+    root.geometry("500x300")
 
     source_folder = None
     output_folder = None
